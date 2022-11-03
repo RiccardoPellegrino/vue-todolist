@@ -27,12 +27,11 @@
         </div>
         <div class="mt-5 pb-2">
             <ul class="border-5 rounded-3 list-unstyled w-75 m-auto">
-                <li class="pb-2 pt-2 d-flex justify-content-between ms-1" v-for="(item , index) in todo"
-                    >
-                    <div class="flex-grow-1" :class="item.done === true ? 'linea' : ' ' " @click="creaLinea(index)">
+                <li class="pb-2 pt-2 d-flex justify-content-between ms-1" v-for="(item , index) in todo" @click="creaLinea(index)">
+                    <div class="flex-grow-1" :class="item.done === true ? 'linea' : ' ' " >
                         {{ index }} {{ item.text}}
                     </div>
-                    <button class="me-1 rounded-4  btn btn-secondary" @click="cancellaElemento()">Cancella</button>
+                    <button class="me-1 rounded-4  btn btn-secondary" @click="cancellaElemento(index)">Cancella</button>
                 </li>
 
             </ul>
